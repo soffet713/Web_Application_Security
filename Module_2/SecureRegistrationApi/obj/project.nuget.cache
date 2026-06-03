@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "2isNmMsDEL0=",
+  "success": false,
+  "projectFilePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_2\\SecureRegistrationApi\\SecureRegistrationApi.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'BCrypt.Net-Next' from remote source 'https://tfsbuild-custom.weinet.com/nuget/FindPackagesById()?id='BCrypt.Net-Next'&semVerLevel=2.0.0'.\r\n  No such host is known. (tfsbuild-custom.weinet.com:443)\r\n  No such host is known.",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_2\\SecureRegistrationApi\\SecureRegistrationApi.csproj",
+      "filePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_2\\SecureRegistrationApi\\SecureRegistrationApi.csproj",
+      "libraryId": "BCrypt.Net-Next",
+      "targetGraphs": []
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+/* These styles are now completely locked to ProductCard */
+.shopease-card[b-tu213lgwn2] {
+    background-color: var(--card-bg);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.shopease-card:hover[b-tu213lgwn2], .shopease-card:focus-within[b-tu213lgwn2] {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.shopease-card-body[b-tu213lgwn2] {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.shopease-card-title[b-tu213lgwn2] {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.shopease-card-category[b-tu213lgwn2] {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+.shopease-card-price[b-tu213lgwn2] {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--success-green);
+    margin: 1rem 0;
+}
+
+.product-card-img[b-tu213lgwn2] {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 7px; /* Match card radius, rounding only top left/right corners */
+    content-visibility: auto; 
+}

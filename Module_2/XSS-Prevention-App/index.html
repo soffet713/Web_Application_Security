@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Prevention App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+</head>
+<body>
+    <h2>Customer Comments</h2>
+
+    <form id="feedbackForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <div id="name-input"></div>
+        <br />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <div id="email-input"></div>
+        <br />
+
+        <label for="comment">Comment:</label>
+        <textarea id="comment" required></textarea>
+        <div id="comment-input"></div>
+        <br />
+
+        <button type="submit">Submit</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

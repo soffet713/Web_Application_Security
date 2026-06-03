@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "l7L91BkIuas=",
+  "success": false,
+  "projectFilePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_1\\SecureApp\\SecureApp.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'MySql.Data' from remote source 'https://tfsbuild-custom.weinet.com/nuget/FindPackagesById()?id='MySql.Data'&semVerLevel=2.0.0'.\r\n  No such host is known. (tfsbuild-custom.weinet.com:443)\r\n  No such host is known.",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_1\\SecureApp\\SecureApp.csproj",
+      "filePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_1\\SecureApp\\SecureApp.csproj",
+      "libraryId": "MySql.Data",
+      "targetGraphs": []
+    }
+  ]
+}

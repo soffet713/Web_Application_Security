@@ -1,0 +1,41 @@
+@using ShopEase.Models
+
+<article class="shopease-card">
+    <img src="images/products/@(Item.ProductID).jpg" 
+         alt="Photo of @Item.Name" 
+         class="product-card-img" />
+
+    <div class="shopease-card-body">
+        <span class="shopease-card-category">@Item.Category</span>
+        <h3 class="shopease-card-title">@Item.Name</h3>
+        <p class="shopease-card-price">$@Item.Price.ToString("F2")</p>
+        
+        <AuthorizeView>
+            <Authorized>
+                <button class="btn btn-primary w-100 mt-auto" 
+                        @onclick="HandleClick"
+                        aria-label="Add @Item.Name to shopping cart">
+                    <i class="bi bi-cart-plus" aria-hidden="true"></i> Add to Cart
+                </button>
+            </Authorized>
+            <NotAuthorized>
+                <a href="/login" class="btn btn-outline-secondary w-100 mt-auto">
+                    <i class="bi bi-lock" aria-hidden="true"></i> Log In to Shop
+                </a>
+            </NotAuthorized>
+        </AuthorizeView>
+    </div>
+</article>
+
+@code {
+    [Parameter] public Product Item { get; set; } = default!;
+    [Parameter] public EventCallback<Product> OnAddToCart { get; set; }
+
+    private async Task HandleClick()
+    {
+        if (OnAddToCart.HasDelegate)
+        {
+            await OnAddToCart.InvokeAsync(Item);
+        }
+    }
+}

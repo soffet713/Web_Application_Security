@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="signup-card">
+        <h2>Sign Up</h2>
+        <form id="registerForm" onsubmit="registerUser(event)">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="name@example.com">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required minlength="8" 
+                placeholder="At least 8 characters">
+            </div>
+            <button type="submit">Create Account</button>
+        </form>
+    </div>
+
+    <script>
+        function registerUser(event) {
+            event.preventDefault();
+    
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+    
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+    
+            const userExists = users.find(u => u.email === email);
+            if (userExists) {
+                alert("This email is already registered!");
+                return;
+            }
+    
+            users.push({ email: email, password: password });
+    
+            localStorage.setItem('users', JSON.stringify(users));
+    
+            alert("Account created successfully! You can now log in.");
+            
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

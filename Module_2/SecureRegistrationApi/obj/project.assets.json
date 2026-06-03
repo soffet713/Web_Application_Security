@@ -1,0 +1,110 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "BCrypt.Net-Next >= 4.1.0",
+      "Microsoft.AspNetCore.OpenApi >= 8.0.12",
+      "Swashbuckle.AspNetCore >= 6.6.2"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\smcwilliams\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_2\\SecureRegistrationApi\\SecureRegistrationApi.csproj",
+      "projectName": "SecureRegistrationApi",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_2\\SecureRegistrationApi\\SecureRegistrationApi.csproj",
+      "packagesPath": "C:\\Users\\smcwilliams\\.nuget\\packages\\",
+      "outputPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_2\\SecureRegistrationApi\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\smcwilliams\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://pkgs.dev.azure.com/Wynsoft-Products/_packaging/Wynsoft-Products/nuget/v3/index.json": {},
+        "https://tfsbuild-custom.weinet.com/nuget": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "BCrypt.Net-Next": {
+            "target": "Package",
+            "version": "[4.1.0, )"
+          },
+          "Microsoft.AspNetCore.OpenApi": {
+            "target": "Package",
+            "version": "[8.0.12, )"
+          },
+          "Swashbuckle.AspNetCore": {
+            "target": "Package",
+            "version": "[6.6.2, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'BCrypt.Net-Next' from remote source 'https://tfsbuild-custom.weinet.com/nuget/FindPackagesById()?id='BCrypt.Net-Next'&semVerLevel=2.0.0'.\r\n  No such host is known. (tfsbuild-custom.weinet.com:443)\r\n  No such host is known.",
+      "libraryId": "BCrypt.Net-Next"
+    }
+  ]
+}

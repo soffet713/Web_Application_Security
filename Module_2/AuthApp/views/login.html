@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="login-card">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="loginUser(event)">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+            <button type="submit" id="loginBtn">Login</button>
+        </form>
+
+        <div class="separator">OR</div>
+
+        <a href="/oauth-login" class="btn-oauth">Login with OAuth</a>
+
+        <!-- MFA (Initially Hidden) -->
+        <div id="mfaSection">
+            <h3>MFA Verification</h3>
+            <p style="font-size: 0.9rem; color: #666;">Enter the code sent to your "device".</p>
+            <div class="input-group">
+                <label for="otpInput">One-Time Code</label>
+                <input type="text" id="otpInput" placeholder="Enter OTP">
+            </div>
+            <button onclick="verifyMFA()" style="background: #007bff;">Verify & Enter</button>
+        </div>
+
+        <div class="footer-link">
+            Don't have an account? <a href="register.html">Sign up</a>
+        </div>
+    </div>
+
+    <script>
+        let generatedOTP = null;
+        let tempUser = null;
+
+        function loginUser(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Check credentials
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (user) {
+                tempUser = user; // Store user info temporarily
+                
+                // Generate a 6-digit random OTP
+                generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
+                
+                // Alert the user with the code (Simulating an SMS/Email)
+                alert("MFA CODE: " + generatedOTP);
+
+                // UI Changes: Hide login button, show MFA section
+                document.getElementById('loginBtn').disabled = true;
+                document.getElementById('mfaSection').style.display = 'block';
+            } else {
+                alert("Invalid email or password.");
+            }
+        }
+
+        function verifyMFA() {
+            const enteredOTP = document.getElementById('otpInput').value;
+
+            // Verify the OTP
+            if (enteredOTP === generatedOTP) {
+                localStorage.setItem('currentUser', JSON.stringify({ email: tempUser.email, loggedIn: true }));
+                alert("Access Granted! Redirecting...");
+                // window.location.href = "dashboard.html";
+            } else {
+                alert("Incorrect code. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>

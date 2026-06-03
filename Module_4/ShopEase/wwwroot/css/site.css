@@ -1,0 +1,24 @@
+:root {
+    --primary-brand: #0d6efd;
+    --text-dark: #1a1a1a;
+    --text-muted: #595959;
+    --success-green: #198754;
+    --card-bg: #ffffff;
+}
+
+body {
+    color: var(--text-dark);
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* The grid layout stays global because it lives on the parent Index.razor page */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+@media (min-width: 576px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 992px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1200px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }

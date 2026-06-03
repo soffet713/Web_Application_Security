@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+    <title>Protected Page</title>
+    <script>
+        if (!localStorage.getItem("authToken")) {
+            window.location.href = "login.html";
+        }
+    </script>
+</head>
+<body>
+    <h2>Protected Page</h2>
+    <p>You have successfully logged in!</p>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Feedback Form</title>
+    </head>
+    <body>
+        <h2>Customer Feedback</h2>
+
+        <form id="feedbackForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <br />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <br />
+
+            <label for="message">Feedback:</label>
+            <textarea id="message" required></textarea>
+            <br />
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <script>
+            function isValidLength(input, min, max) {
+                return input.length >= min && input.length <= max;
+            }
+
+            function isValidEmail(email) {
+                return email.includes('@');
+            }
+
+            const form = document.getElementById('feadbackForm');
+
+            form.addEventListener('submit', (e) => {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (!isValidLength(name,2,50)) {
+                    alert('Name must be at least 2 characters long.');
+                    e.preventDefault();
+                }
+
+                if (!isValidEmail(email)) {
+                    alert('Please enter a valid email address.');
+                    e.preventDefault();
+                }
+
+                if (!isValidLength(message,10,200)) {
+                    alert('Message must be between 10 and 200 characters.');
+                    e.preventDefault();
+                }
+            });
+        </script>
+    </body>
+</html>

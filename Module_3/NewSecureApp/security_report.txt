@@ -1,0 +1,34 @@
+Security Review Report
+1. Vulnerabilities Identified
+Hard-coded Credentials: The initial code stored a static username (admin) and password (password123) directly in the source, which would be visible to anyone with access to the code or the compiled binary.
+
+Plain-text Password Storage: The application compared raw strings. If the storage medium were compromised, the user's password would be immediately exposed.
+
+Lack of Input Validation: The program accepted any input from Console.ReadLine() without checking for empty strings or null values, potentially leading to logic errors or crashes.
+
+Timing Attack Vulnerability: Standard string equality (==) was used for authentication, which can leak information about the correct password through response time variations.
+
+2. Fixes Applied
+Implemented Secure Password Hashing: Replaced direct string comparison with Microsoft.AspNetCore.Identity.PasswordHasher. This ensures the system only stores and verifies cryptographic hashes, never the actual password.
+
+Added Input Validation: Integrated string.IsNullOrWhiteSpace() checks to ensure the application only attempts to authenticate valid, non-empty credentials.
+
+Removed Hard-coded Credentials: The logic was refactored to verify against a _storedHash. This separates the identity of the user from the logic of the application.
+
+Constant-Time Verification: By using the PasswordHasher library, the comparison is now mathematically resistant to timing-based side-channel attacks.
+
+3. Secure Coding Practices Verified
+Credential Abstraction: The code no longer contains sensitive plain-text strings.
+
+Defense in Depth: Even if an attacker accesses the source code, they only see the hashing algorithm, not the users' passwords.
+
+Standard Library Usage: Instead of "rolling our own" security logic, we utilized industry-standard .NET libraries (System.Security.Cryptography) which are vetted and maintained by security experts.
+
+4. Recommendations for Continuous Security Monitoring
+Automated Secret Scanning: Use tools like GitHub Advanced Security or TruffleHog to scan repositories automatically. This ensures that if a developer accidentally hardcodes a secret in the future, it is caught before it is merged.
+
+Dependency Auditing: Regularly run dotnet list package --vulnerable to check if the Microsoft.AspNetCore.Identity or other packages have newly discovered security flaws that require patching.
+
+Centralized Logging: Implement structured logging (using Serilog or NLog) to track failed login attempts. Monitor for "Credential Stuffing" patterns where a single IP attempts many different passwords in a short window.
+
+Transition to Managed Identity: For production environments, move the _storedHash out of the code entirely and into a secure database like Azure SQL or PostgreSQL, accessed via a secure connection string.

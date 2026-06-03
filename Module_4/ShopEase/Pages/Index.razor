@@ -1,0 +1,166 @@
+@page "/"
+@using ShopEase.Models
+@using Blazored.LocalStorage
+@inject ILocalStorageService LocalStorage
+@inject AuthenticationStateProvider AuthStateProvider
+
+<PageTitle>ShopEase - Responsive Catalog</PageTitle>
+
+<div class="container mt-4">
+    <header class="mb-4">
+        <h1 class="display-5 fw-bold">ShopEase Catalog</h1>
+        <p class="text-muted">Browse our responsive, accessible products grid.</p>
+    </header>
+
+    <main class="product-grid">
+        @foreach (var product in storeInventory)
+        {
+            <ProductCard @key="product.ProductID" Item="product" OnAddToCart="HandleProductAddedAsync" />
+        }
+    </main>
+
+    <hr class="my-5" />
+
+    <div class="row mt-4">
+        <div class="col-md-8 col-lg-6">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3>Your Shopping Cart</h3>
+                @if (myCart.Items.Any())
+                {
+                    <button class="btn btn-outline-danger btn-sm" @onclick="HandleClearCartAsync">
+                        <i class="bi bi-trash3 me-1" aria-hidden="true"></i> Empty Cart
+                    </button>
+                }
+            </div>
+
+            @if (cartFeedbackMessage != null)
+            {
+                <div class="alert alert-success" role="alert">@cartFeedbackMessage</div>
+            }
+
+            @if (myCart.Items.Any())
+            {
+                <ul class="list-group mb-3 shadow-sm">
+                    @foreach (var item in myCart.Items)
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong class="me-2">@item.Name</strong>
+                                <span class="text-muted small">(@item.Category)</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success rounded-pill me-3">$@item.Price.ToString("F2")</span>
+                                <button class="btn btn-sm btn-link text-danger p-0 border-0" 
+                                        @onclick="() => HandleRemoveProductAsync(item.ProductID)"
+                                        aria-label="Remove @item.Name from cart">
+                                    <span class="bi bi-x-circle-fill" aria-hidden="true" style="font-size: 1.15rem;"></span>
+                                </button>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <div class="alert alert-secondary text-center py-4">
+                    <p class="mb-0 text-muted">Your cart is currently empty. Add some items above!</p>
+                </div>
+            }
+
+            <div class="card p-3 bg-light shadow-sm">
+                <h5>Total Items: @_cartItemsCount</h5>
+                <h4>Total Cost: <span class="text-success">$@_cartTotal.ToString("F2")</span></h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private Cart myCart = new Cart();
+    private List<Product> storeInventory = new List<Product>();
+    private string? cartFeedbackMessage;
+    private int _cartItemsCount = 0;
+    private decimal _cartTotal = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        storeInventory = new List<Product>
+        {
+            new Product(1, "Premium Laptop", 999.99m, "Electronics"),
+            new Product(2, "Wireless Mouse", 25.50m, "Electronics"),
+            new Product(3, "C# Programming Guide", 45.00m, "Books"),
+            new Product(4, "Noise Cancelling Headphones", 180.00m, "Electronics")
+        };
+
+        try
+        {
+            var savedItems = await LocalStorage.GetItemAsync<List<Product>>("ShopEase_Cart");
+            if (savedItems != null)
+            {
+                myCart.LoadStoredItems(savedItems);
+                UpdateCartMetrics();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"State restoration bypass: {ex.Message}");
+        }
+    }
+
+    private async Task HandleProductAddedAsync(Product selectedProduct)
+    {
+        var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity is not null && user.Identity.IsAuthenticated)
+        {
+            cartFeedbackMessage = $"Adding '{selectedProduct.Name}'...";
+            
+            await myCart.AddProductAsync(selectedProduct);
+            await LocalStorage.SetItemAsync("ShopEase_Cart", myCart.Items);
+            UpdateCartMetrics();
+
+            cartFeedbackMessage = $"Added '{selectedProduct.Name}' to your cart successfully!";
+        }
+        else
+        {
+            cartFeedbackMessage = "Security Restriction: You must be logged in to modify shopping elements.";
+        }
+    }
+
+    // 1. NEW METHOD: Removes a single item by its ID, updates local storage, and syncs UI metrics
+    private async Task HandleRemoveProductAsync(int productId)
+    {
+        var item = myCart.Items.FirstOrDefault(p => p.ProductID == productId);
+        if (item != null)
+        {
+            await myCart.RemoveProductAsync(productId);
+            await LocalStorage.SetItemAsync("ShopEase_Cart", myCart.Items);
+            UpdateCartMetrics();
+            
+            cartFeedbackMessage = $"Removed '{item.Name}' from your cart.";
+        }
+    }
+
+    // 2. NEW METHOD: Wipes the entire cart list out completely
+    private async Task HandleClearCartAsync()
+    {
+        // 1. Clears the inner list inside your Cart class completely
+        myCart.LoadStoredItems(null);
+        
+        // 2. Erases the local storage key from the browser
+        await LocalStorage.RemoveItemAsync("ShopEase_Cart");
+        
+        // 3. Recalculates metrics (which will now cleanly set counts to 0 and cost to $0.00)
+        UpdateCartMetrics();
+        
+        cartFeedbackMessage = "Your shopping cart has been cleared.";
+    }
+
+    // Helper to keep metric recalculations centralized and clean
+    private void UpdateCartMetrics()
+    {
+        _cartTotal = myCart.CalculateTotal();
+        _cartItemsCount = myCart.Items.Count;
+    }
+}

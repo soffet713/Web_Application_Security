@@ -1,0 +1,126 @@
+{
+  "version": 2,
+  "dgSpecHash": "mTRAe1O+Vw8=",
+  "success": false,
+  "projectFilePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'Microsoft.NET.ILLink.Tasks' from remote source 'https://tfsbuild-custom.weinet.com/nuget/FindPackagesById()?id='Microsoft.NET.ILLink.Tasks'&semVerLevel=2.0.0'.\r\n  No such host is known. (tfsbuild-custom.weinet.com:443)\r\n  No such host is known.",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "filePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "libraryId": "Microsoft.NET.ILLink.Tasks",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'Blazored.LocalStorage' from remote source 'https://tfsbuild-custom.weinet.com/nuget/FindPackagesById()?id='Blazored.LocalStorage'&semVerLevel=2.0.0'.\r\n  No such host is known. (tfsbuild-custom.weinet.com:443)\r\n  No such host is known.",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "filePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "libraryId": "Blazored.LocalStorage",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'Microsoft.AspNetCore.Components.Authorization' from remote source 'https://tfsbuild-custom.weinet.com/nuget/FindPackagesById()?id='Microsoft.AspNetCore.Components.Authorization'&semVerLevel=2.0.0'.\r\n  No such host is known. (tfsbuild-custom.weinet.com:443)\r\n  No such host is known.",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "filePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "libraryId": "Microsoft.AspNetCore.Components.Authorization",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'Microsoft.AspNetCore.Components.WebAssembly.DevServer' from remote source 'https://tfsbuild-custom.weinet.com/nuget/FindPackagesById()?id='Microsoft.AspNetCore.Components.WebAssembly.DevServer'&semVerLevel=2.0.0'.\r\n  No such host is known. (tfsbuild-custom.weinet.com:443)\r\n  No such host is known.",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "filePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "libraryId": "Microsoft.AspNetCore.Components.WebAssembly.DevServer",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'Microsoft.NET.Sdk.WebAssembly.Pack' from remote source 'https://tfsbuild-custom.weinet.com/nuget/FindPackagesById()?id='Microsoft.NET.Sdk.WebAssembly.Pack'&semVerLevel=2.0.0'.\r\n  No such host is known. (tfsbuild-custom.weinet.com:443)\r\n  No such host is known.",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "filePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "libraryId": "Microsoft.NET.Sdk.WebAssembly.Pack",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'Microsoft.AspNetCore.Components.WebAssembly' from remote source 'https://tfsbuild-custom.weinet.com/nuget/FindPackagesById()?id='Microsoft.AspNetCore.Components.WebAssembly'&semVerLevel=2.0.0'.\r\n  No such host is known. (tfsbuild-custom.weinet.com:443)\r\n  No such host is known.",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "filePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "libraryId": "Microsoft.AspNetCore.Components.WebAssembly",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://pkgs.dev.azure.com/Wynsoft-Products/_packaging/Wynsoft-Products/nuget/v3/index.json.\r\n  Response status code does not indicate success: 401 (Unauthorized).",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "filePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "libraryId": "Blazored.LocalStorage",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://pkgs.dev.azure.com/Wynsoft-Products/_packaging/Wynsoft-Products/nuget/v3/index.json.\r\n  Response status code does not indicate success: 401 (Unauthorized).",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "filePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "libraryId": "Microsoft.AspNetCore.Components.Authorization",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://pkgs.dev.azure.com/Wynsoft-Products/_packaging/Wynsoft-Products/nuget/v3/index.json.\r\n  Response status code does not indicate success: 401 (Unauthorized).",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "filePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "libraryId": "Microsoft.NET.Sdk.WebAssembly.Pack",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://pkgs.dev.azure.com/Wynsoft-Products/_packaging/Wynsoft-Products/nuget/v3/index.json.\r\n  Response status code does not indicate success: 401 (Unauthorized).",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "filePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "libraryId": "Microsoft.AspNetCore.Components.WebAssembly.DevServer",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://pkgs.dev.azure.com/Wynsoft-Products/_packaging/Wynsoft-Products/nuget/v3/index.json.\r\n  Response status code does not indicate success: 401 (Unauthorized).",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "filePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "libraryId": "Microsoft.AspNetCore.Components.WebAssembly",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://pkgs.dev.azure.com/Wynsoft-Products/_packaging/Wynsoft-Products/nuget/v3/index.json.\r\n  Response status code does not indicate success: 401 (Unauthorized).",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "filePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "libraryId": "Microsoft.NET.ILLink.Tasks",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://pkgs.dev.azure.com/Wynsoft-Products/_packaging/Wynsoft-Products/nuget/v3/index.json.",
+      "projectPath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "warningLevel": 1,
+      "filePath": "E:\\IntelliJ_Workspace\\Microsoft_Front_End_Developer_Certificate\\Web_Application_Security\\Module_4\\ShopEase\\ShopEase.csproj",
+      "targetGraphs": []
+    }
+  ]
+}
